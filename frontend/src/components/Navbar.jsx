@@ -39,9 +39,9 @@ const {setShowSearch}=useContext(ShopContext);
     </Link>
           <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
             <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded'>
-              <Link>              <p className='cursor-pointer hover:text-black' to='/Profile'>My Profile</p>
+              <Link to='/Profile'>              <p className='cursor-pointer hover:text-black'>My Profile</p>
               </Link>
-              <Link>              <p className='cursor-pointer hover:text-black' to="/orders">Orders</p>
+              <Link to="/orders">              <p className='cursor-pointer hover:text-black' >Orders</p>
               </Link>
                         <p className='cursor-pointer hover:text-black'>Logout</p>
             </div>
