@@ -1,30 +1,28 @@
 import p_img1 from './p_img1.png'
-import p_img2 from './p_img2.png'
 import p_img2_1 from './p_img2_1.png'
 import p_img2_2 from './p_img2_2.png'
 import p_img2_3 from './p_img2_3.png'
 import p_img2_4 from './p_img2_4.png'
 import p_img3 from './p_img3.png'
-import p_img3_1 from './p_img3_1.png'
-import p_img4 from './p_img4.jpg'
-import p_img5 from './p_img5.jpg'
-import p_img6 from './p_img6.jpg'
-import p_img7 from './p_img7.jpg'
-import p_img8 from './p_img8.jpg'
-import p_img9 from './p_img9.jpg'
-import p_img10 from './p_img10.jpg'
-import p_img11 from './p_img11.jpg'
-import p_img12 from './p_img12.jpg'
-import p_img13 from './p_img13.jpg'
-import p_img14 from './p_img14.jpg'
-import p_img15 from './p_img15.jpg'
-import p_img16 from './p_img16.jpg'
-import p_img17 from './p_img17.jpg'
-import p_img18 from './p_img18.jpg'
-import p_img19 from './p_img19.jpg'
-import p_img20 from './p_img20.jpg'
-import p_img21 from './p_img21.jpg'
-import p_img22 from './p_img22.jpg'
+import p_img4 from './p_img4.png'
+import p_img5 from './p_img5.png'
+import p_img6 from './p_img6.png'
+import p_img7 from './p_img7.png'
+import p_img8 from './p_img8.png'
+import p_img9 from './p_img9.png'
+import p_img10 from './p_img10.png'
+import p_img11 from './p_img11.png'
+import p_img12 from './p_img12.png'
+import p_img13 from './p_img13.png'
+import p_img14 from './p_img14.png'
+import p_img15 from './p_img15.png'
+import p_img16 from './p_img16.png'
+import p_img17 from './p_img17.png'
+import p_img18 from './p_img18.png'
+import p_img19 from './p_img19.png'
+import p_img20 from './p_img20.png'
+import p_img21 from './p_img21.png'
+import p_img22 from './p_img22.png'
 import p_img23 from './p_img23.png'
 import p_img24 from './p_img24.png'
 import p_img25 from './p_img25.png'
@@ -100,10 +98,10 @@ export const assets = {
 export const products = [
     {
         _id: "aaaaa",
-        name: "Radiant Banarasi Silk Saree with Golden Zari Embroidery",
-        description: "Drape yourself in royal elegance with this exquisite mustard yellow Banarasi silk saree, adorned with intricate golden Zari embroidery. This masterpiece showcases traditional floral and paisley motifs with a beautifully crafted broad border and rich pallu, perfect for making a statement at weddings, festive occasions, and special events.",
+        name: "Women Round Neck Cotton Top",
+        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 100,
-        image: [p_img1,p_img1_1,p_img1_2,p_img1_3,p_img1_4],
+        image: [p_img1],
         category: "Women",
         subCategory: "Topwear",
         sizes: ["S", "M", "L"],
@@ -112,10 +110,10 @@ export const products = [
     },
     {
         _id: "aaaab",
-        name: "Luxurious Banarasi Silk Saree with Heavy Zari Embroidery",
-        description: "Drape yourself in elegance with this exquisite Banarasi silk saree, featuring a rich magenta hue adorned with intricate golden Zari embroidery. The luxurious craftsmanship showcases traditional motifs and a grand border design, making it a perfect choice for weddings, festive occasions, and grand celebrations.",
+        name: "Men Round Neck Pure Cotton T-shirt",
+        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 200,
-        image: [p_img2,p_img2_1,p_img2_2,p_img2_3,p_img2_4],
+        image: [p_img2_1,p_img2_2,p_img2_3,p_img2_4],
         category: "Men",
         subCategory: "Topwear",
         sizes: ["M", "L", "XL"],
@@ -124,10 +122,10 @@ export const products = [
     },
     {
         _id: "aaaac",
-        name: "Regal Silk Saree with Heavy Golden Zari Embroidery",
-        description: "Step into timeless elegance with this stunning Banarasi silk saree, featuring a classic red base embellished with intricate golden Zari embroidery. Designed for grand celebrations, this saree showcases traditional motifs, a luxurious broad border, and an opulent pallu that exudes royalty. A perfect choice for weddings, festive occasions, and cultural events.",
+        name: "Girls Round Neck Cotton Top",
+        description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 220,
-        image: [p_img3,p_img3_1],
+        image: [p_img3],
         category: "Kids",
         subCategory: "Topwear",
         sizes: ["S", "L", "XL"],
