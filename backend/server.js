@@ -1,23 +1,30 @@
-import express from 'express'
-import cors from 'cors'
-import 'dotenv/config'
-import connectDB from './config/mongodb.js'
+import express from "express"
+import bodyParser from 'body-parser'
+import cors from "cors"
+import mongoose from "./config/mongodb.js";
+import connectCloudinary from "./config/cloudinary.js";
+import userRouter from "./routes/userRoute.js";
+import dotenv from "dotenv";
+import productRouter from "./routes/productRoute.js";
+dotenv.config();
 
-// App Config
-const app=express()
-const port=process.env.PORT || 4000
-
-
-// middlewares
-app.use(express.json())
+const app =express()
+app.use(bodyParser.json())
 app.use(cors())
+const port = process.env.PORT || 5000
+app.use("/uploads", express.static("uploads")); // If using file uploads
 
-// api endpoints
+connectCloudinary();
+
+//api endpoints
+app.use('/api/user',userRouter)
+app.use('/api/product',productRouter);
 
 app.get('/',(req,res)=>{
-    res.send("API Working")
+    res.send("Hello world from Server")
 })
 
- app.listen(port,()=>console.log('Server started on PORT :'+port))
- connectDB()
+app.listen(port,()=>{
+    console.log(`Server is running on : http://localhost:${port}`)
+})
 
