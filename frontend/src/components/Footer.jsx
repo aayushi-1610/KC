@@ -1,42 +1,51 @@
-import React from 'react'
-import { assets } from '../assets/assets'
+import React from "react";
+import { assets } from "../assets/assets";
 
 const Footer = () => {
   return (
-    <div>
-        <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
-        <div>
-            <img src={assets.logo} className='mb-5 w-32' alt=""></img>
-            <p className='w-full md:w-2/3 text-gray-600'>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    <div
+      className="w-screen -mx-33.5 bg-cover bg-center bg-repeat"
+      style={{ backgroundImage: `url(${assets.footer_bg})` }} // Change footer_bg to your image name
+    >
+      <div className="backdrop-brightness-95">
+        <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap- py-10 mt-40 px-20 text-sm text-white">
+          <div>
+            <img src={assets.logo} className="mb-5 w-32" alt=""></img>
+            <p className="w-full md:w-2/3 text-black">
+              Embrace the Timeless Beauty of Tradition with Kashvi Creations.
+              From the Heart of Surat, We Bring You Exquisite Sarees Woven with
+              Elegance and Crafted with Love. Discover a World Where Heritage
+              Meets Contemporary Style – Only at Kashvi Creations.
             </p>
-        </div>
+          </div>
 
-        <div>
-            <p className='text-xl font-medium mb-5'>COMPANY</p>
-            <ul className='flex flex-col gap-1 text-gray-600'>
-                <li>Home</li>
-                <li>About us</li>
-                <li>Delivery</li>
-                <li>Privacy policy</li>
+          <div>
+            <p className="text-xl font-medium mb-5 text-black">COMPANY</p>
+            <ul className="flex flex-col gap-1 text-black">
+              <li>Home</li>
+              <li>About us</li>
+              <li>Delivery</li>
+              <li>Privacy policy</li>
             </ul>
-        </div>
+          </div>
 
-        <div>
-            <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
-            <ul className='flex flex-col gap-1 text-gray-600'>
-                <li>+1-212-456-7890</li>
-                <li>contact@foreveryou.com</li>
+          <div>
+            <p className="text-xl font-medium mb-5 text-black">GET IN TOUCH</p>
+            <ul className="flex flex-col gap-1 text-black">
+              <li>+91 9376421333</li>
+              <li>kashvicreation10@gmail.com</li>
             </ul>
-        </div>
-
+          </div>
         </div>
         <div>
-            <hr></hr>
-            <p className='py-5 text-sm text-center'>Copyright 2025@ KaashviCreations.com - All Right Reseverd.</p>
+          <hr className="border-gray-500"></hr>
+          <p className="py-5 text-sm text-center text-black">
+            Copyright 2025@ KashviCreations.com - All Right Reserved.
+          </p>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
