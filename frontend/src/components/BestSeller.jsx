@@ -17,9 +17,9 @@ const BestSeller = () => {
   return (
     <div className='my-10'>
         <div className='text-center text-3xl py-8'>
-            <Title text1={'BEST'} text2={'SELLERS'}>            </Title>
+            <Title text1={'BEST'} text2={'SELLERS'}></Title>
             <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            Elevate your style with our most-loved sarees! From the rich elegance of Banarasi silk to the effortless charm of georgette and chiffon drapes, our bestseller collection blends tradition with modern grace. Whether it's a grand celebration or an everyday statement, these sarees are timeless favorites. Shop now and embrace elegance!
             </p>
         </div>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>

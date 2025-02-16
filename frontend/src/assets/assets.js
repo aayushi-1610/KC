@@ -95,7 +95,10 @@ export const assets = {
     contact_img,
     razorpay_logo,
     stripe_logo,
-    cross_icon
+    cross_icon,
+    navbar_bg,
+    bg_image,
+  footer_bg
 }
 
 export const products = [
@@ -724,3 +727,5 @@ export const products = [
     }
 
 ]
+
+export default {assets,products}

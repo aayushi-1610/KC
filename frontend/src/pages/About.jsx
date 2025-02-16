@@ -1,44 +1,161 @@
 import React from "react";
-import Title from "../components/Title";
-import { assets } from "../assets/assets";
+
 const About = () => {
   return (
-    <div>
-      <div className="text-2xl text-center pt-8 border-t">
-        <Title text1={"About"} text2={"Us"} />
-      </div>
-      <div className="my-10 flex flex-col md:flex-row gap-16">
-        <img
-          className="w-full md:max-w-[450px]"
-          src={assets.about_img}
-          alt=""
-        />
-        <div className="flex flex-col justify-center gap-6 md:w-2/4 text-gray-600">
-          <p>Kashvi Creations is a saree store for your loved ones.</p>
-          <p>We aim to spread love through our sarees.</p>
-          <b className="text-gray-800">Our Mission</b>
-          <p>...</p>
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+        }
+        /* You may want to remove this body styling if it's already handled elsewhere in your app */
+        body {
+          height: 100%;
+          width: 100%;
+          text-align: center;
+          background: #f2f2f2;
+        }
+        .wrapper {
+          display: grid;
+          margin: 200px 90px auto;
+          grid-gap: 20px;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+        @media (max-width: 700px) {
+          .wrapper {
+            margin: 200px auto;
+          }
+        }
+        .wrapper .box {
+          width: 350px;
+          margin: 0 auto;
+          position: relative;
+          perspective: 1000px;
+        }
+        .wrapper .box .front-face {
+          background: #fff;
+          height: 220px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          box-shadow: 0px 5px 20px 0px rgba(128, 0, 0, 0.1);
+          transition: all 0.5s ease;
+        }
+        .box .front-face .icon {
+          height: 80px;
+        }
+        .box .front-face .icon img {
+          font-size: 65px;
+          color: #800000; /* Maroon */
+        }
+        .box .front-face span {
+          font-size: 22px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: #800000; /* Maroon */
+        }
+        .box .back-face {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          height: 220px;
+          width: 100%;
+          padding: 30px;
+          color: #fff;
+          opacity: 0;
+          transform-style: preserve-3d;
+          backface-visibility: hidden;
+          /* Maroon-Gold Gradient */
+          background: linear-gradient(135deg, #740c4a, #DAA520);
+          box-shadow: 0px 5px 20px 0px rgba(128, 0, 0, 0.1);
+          transform: translateY(110px) rotateX(-90deg);
+          transition: all 0.5s ease;
+        }
+        .box .back-face p {
+          margin-top: 10px;
+          text-align: justify;
+        }
+        .box:hover .back-face {
+          opacity: 1;
+          transform: rotateX(0deg);
+        }
+        .box:hover .front-face {
+          opacity: 0;
+          transform: translateY(-110px) rotateX(90deg);
+        }
+      `}</style>
+
+      <div className="wrapper">
+        {/* Box 1 */}
+        <div className="box">
+          <div className="front-face">
+            <div className="icon">
+              <img
+                src="https://img.icons8.com/color/96/000000/crown.png"
+                alt="Crown Icon"
+              />
+            </div>
+            <span>A Legacy of Sarees</span>
+          </div>
+          <div className="back-face">
+            <p>
+              Our journey began with a deep-rooted love for Indian heritage.
+              Every saree is a masterpiece, meticulously designed to reflect
+              grace, culture, and sophistication.
+            </p>
+          </div>
+        </div>
+
+        {/* Box 2 */}
+        <div className="box">
+          <div className="front-face">
+            <div className="icon">
+              <img
+                src="https://img.icons8.com/?size=100&id=1328&format=png&color=000000"
+                alt="Thread Icon"
+                height="60px"
+              />
+            </div>
+            <span>From Thread to Treasure</span>
+          </div>
+          <div className="back-face">
+            <p>
+              We work closely with skilled artisans across India, ensuring each
+              weave tells a story of tradition, precision, and artistry. Kashvi
+              Creation offers a saree for every occasion.
+            </p>
+          </div>
+        </div>
+
+        {/* Box 3 */}
+        <div className="box">
+          <div className="front-face">
+            <div className="icon">
+              <img
+                src="https://img.icons8.com/color/96/000000/ok--v1.png"
+                alt="Quality Icon"
+                height="60px"
+              />
+            </div>
+            <span>Quality You Can Trust</span>
+          </div>
+          <div className="back-face">
+            <p>
+              With a commitment to quality and elegance, we bring you sarees
+              that make every moment special. Explore our collection and embrace
+              timeless fashion with Kashvi Creation.
+            </p>
+          </div>
         </div>
       </div>
-      <div className="text-4xl py-4">
-        <Title text1={"Why"} text2={"Choose Us?"} />
-      </div>
-      <div className="flex flex-col md:flex-row text-sm mb-20">
-        <div className="border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5">
-          <b>Quality Assurance:</b>
-          <p className="text-gray-600">...</p>
-        </div>
-        <div className="border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5">
-          <b>Convenience:</b>
-          <p className="text-gray-600">...</p>
-        </div>
-        <div className="border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5">
-          <b>Exceptional Customer Service:</b>
-          <p className="text-gray-600">...</p>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 
 export default About;
+
