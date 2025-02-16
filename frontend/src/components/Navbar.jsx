@@ -6,8 +6,10 @@ import { ShopContext } from '../context/ShopContext'
 const Navbar = () => {
 
   const [visible,setVisible]=useState(false);
+  const {setShowSearch}=useContext(ShopContext);
+  const { wishlistItems } = useContext(ShopContext);
+  const wishlistCount = Object.keys(wishlistItems).length;
 
-const {setShowSearch}=useContext(ShopContext);
 
 
   return (
@@ -51,6 +53,15 @@ const {setShowSearch}=useContext(ShopContext);
         <img src={assets.cart_icon} className='w-5 min-w-5' alt=""></img>
         <p className='absolute right-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]'>10</p>
         </Link>
+        <Link to='/wishlist' className='relative'>
+        <img src={assets.heart_icon} className='w-5 min-w-5' alt='Wishlist' />
+          {wishlistCount > 0 && (
+          <p className='absolute right-[-5px] w-4 text-center leading-4 bg-red-500 text-white aspect-square rounded-full text-[8px]'>
+            {wishlistCount}
+          </p>
+          )}
+        </Link>
+
         <img onClick={()=>setVisible(true)} src={assets.menu_icon} className='w-5 cursor-pointer sm:hidden' alt=""></img>
       </div>
 
@@ -65,7 +76,23 @@ const {setShowSearch}=useContext(ShopContext);
       <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/collection'>COLLECTION</NavLink>
       <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/about'>ABOUT</NavLink>
       <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/contact'>CONTACT</NavLink>
+      <div className='flex items-center gap-6'>
+      {/* Wishlist Icon */}
+      <Link to='/wishlist' className='relative'>
+        <img src={assets.heart_icon} className='w-5 min-w-5' alt='Wishlist' />
+        {wishlistCount > 0 && (
+          <p className='absolute right-[-5px] w-4 text-center leading-4 bg-red-500 text-white aspect-square rounded-full text-[8px]'>
+            {wishlistCount}
+          </p>
+        )}
+      </Link>
 
+      {/* Cart Icon */}
+      <Link to='/cart' className='relative'>
+        <img src={assets.cart_icon} className='w-5 min-w-5' alt='' />
+        <p className='absolute right-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]'>10</p>
+      </Link>
+    </div> 
     </div>
       </div>
     </div>
