@@ -12,6 +12,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import SearchBar from './components/SearchBar'
 import PlaceOrder from './pages/PLaceOrder'
+import Slider from './components/slider'
 
 const App = () => {
   return (
@@ -28,7 +29,7 @@ const App = () => {
       <Route path='/login' element={<Login></Login>}></Route>
       <Route path='/place-order' element={<PlaceOrder></PlaceOrder>}></Route>
       <Route path='/orders' element={<Orders></Orders>}></Route>
-
+      <Route path='/slider' element={<Slider></Slider>}></Route>
     </Routes>
     <Footer></Footer>
     </div>
