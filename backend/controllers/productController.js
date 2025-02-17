@@ -4,12 +4,13 @@ import productModel from "../models/productModel.js";
 // Function to add a product
 const addProduct = async (req, res) => {
     try {
-        const { name, description, price, category, subCategory, sizes, bestseller } = req.body;
+
+        const { name, description, category, subCategory,bestseller } = req.body;
 
         // Extracting images
-        const images = ["image1", "image2", "image3", "image4"]
-            .map((key) => req.files[key]?.[0])
-            .filter(Boolean); // Removes undefined values
+        const images = Object.keys(req.files || {})
+    .filter((key) => ["image1", "image2", "image3", "image4"].includes(key))
+    .flatMap((key) => req.files[key] || []);
 
         // Upload images to Cloudinary
         let imagesUrl = await Promise.all(
@@ -24,10 +25,8 @@ const addProduct = async (req, res) => {
             name,
             description,
             category,
-            price: Number(price),
             subCategory,
             bestseller: bestseller === "true",
-            sizes: JSON.parse(sizes),
             images: imagesUrl,
             date: Date.now(),
         };

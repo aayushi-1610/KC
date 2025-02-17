@@ -13,6 +13,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@tailwindcss/vite": "^4.0.4",
+    "axios": "^1.7.9",
     "framer-motion": "^12.4.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

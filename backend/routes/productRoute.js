@@ -10,3 +10,4 @@ productRouter.post('/single',singleProduct);
 productRouter.get('/list',listProducts);
 
 export default productRouter
+

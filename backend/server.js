@@ -6,6 +6,7 @@ import connectCloudinary from "./config/cloudinary.js";
 import userRouter from "./routes/userRoute.js";
 import dotenv from "dotenv";
 import productRouter from "./routes/productRoute.js";
+import cartRouter from "./routes/cartRoute.js";
 dotenv.config();
 
 const app =express()
@@ -19,6 +20,7 @@ connectCloudinary();
 //api endpoints
 app.use('/api/user',userRouter)
 app.use('/api/product',productRouter);
+app.use('/api/cart',cartRouter)
 
 app.get('/',(req,res)=>{
     res.send("Hello world from Server")
