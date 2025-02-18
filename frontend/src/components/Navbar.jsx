@@ -20,13 +20,13 @@ const Navbar = () => {
 
   return (
     <div
-      className="w-screen -mx-33.5 relative flex items-center justify-between py-5 pt-5 mb-10 font-medium bg-cover bg-center bg-no-repeat"
+      className="w-screen -mx-33.5 relative flex items-center justify-between py-8 pt-8 font-medium bg-cover bg-center bg-no-repeat h-48"
       style={{ backgroundImage: `url(${assets.navbar_bg})` }}
     >
       <Link to="/">
         <img src={assets.logo} className="w-20 mt-0 mb-14 ml-4" alt=""></img>
       </Link>
-      <ul className="hidden mb-14 sm:flex gap-20 text-white text-gray-700">
+      <ul className="hidden mb-10 sm:flex gap-20 text-white text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>HOME</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-white hidden"></hr>

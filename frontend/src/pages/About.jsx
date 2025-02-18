@@ -39,6 +39,7 @@ const About = () => {
           background: #fff;
           height: 220px;
           width: 100%;
+          align-items: center;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -46,15 +47,18 @@ const About = () => {
           transition: all 0.5s ease;
         }
         .box .front-face .icon {
+        align-items: center
           height: 80px;
         }
         .box .front-face .icon img {
+        align-items: center
           font-size: 65px;
           color: #800000; /* Maroon */
         }
         .box .front-face span {
           font-size: 22px;
           font-weight: 600;
+          align-items: center
           text-transform: uppercase;
           color: #800000; /* Maroon */
         }
@@ -62,6 +66,7 @@ const About = () => {
           position: absolute;
           top: 0;
           left: 0;
+          align-items: center
           z-index: 1;
           height: 220px;
           width: 100%;
@@ -78,6 +83,7 @@ const About = () => {
         }
         .box .back-face p {
           margin-top: 10px;
+          align-items: center
           text-align: justify;
         }
         .box:hover .back-face {
@@ -96,7 +102,7 @@ const About = () => {
           <div className="front-face">
             <div className="icon">
               <img
-                src="https://img.icons8.com/color/96/000000/crown.png"
+                src="https://img.icons8.com/color/96/000000/crown.png" width="100rem"
                 alt="Crown Icon"
               />
             </div>

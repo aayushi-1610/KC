@@ -8,7 +8,7 @@ import About from "./About"
 import SareeCarousel from '../components/slider'
 const Home = () => {
   return (
-    <div >
+    <div>
       <SareeCarousel></SareeCarousel>
       <Hero></Hero>
       <LatestCollection></LatestCollection>
