@@ -94,7 +94,7 @@ const Add = ({token}) => {
       
       <div className='flex flex-col sm:flex-row gap-2 w-full sm:gap-8'>
       <div>
-        <p className='mb-2'>Product category</p>
+        <p className='mb-2'>Product Color</p>
         <select onChange={(e)=>setCategory(e.target.value)} className='w-full px-3 py-2'>
           <option value="Red">Red</option>
           <option value="Yellow">Yellow</option>
@@ -106,7 +106,7 @@ const Add = ({token}) => {
         </select>
       </div>
       <div>
-        <p className='mb-2'> Product Subcategory</p>
+        <p className='mb-2'> Product category</p>
         <select onChange={(e)=>setSubCategory(e.target.value)} className='w-full px-3 py-2'>
           <option value="Banarasi">Banarasi</option>
           <option value="Regal">Regal</option>
