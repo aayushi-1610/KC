@@ -182,7 +182,7 @@ const CarouselComponent = () => {
         
         .container {
   width: 100%;
-  max-width: 1000px; /* optional max-width */
+  max-width: 95rem; /* optional max-width */
   height: 90vh;      /* or auto if you want content-based height */
   margin: 50px auto; /* center in the parent container */
   background: transparent;
