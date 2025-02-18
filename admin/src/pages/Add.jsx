@@ -13,8 +13,8 @@ const Add = ({token}) => {
 
   const [name,setName]=useState("");
   const [description,setDescription]=useState("")
-  const [category,setCategory]=useState("Men");
-  const [subCategory,setSubCategory]=useState("Men");
+  const [category,setCategory]=useState("Red");
+  const [subCategory,setSubCategory]=useState("Banarasi");
   const [bestseller,setBestseller]=useState(false)
   
   const onSubmitHandler = async(e)=>{
@@ -96,17 +96,23 @@ const Add = ({token}) => {
       <div>
         <p className='mb-2'>Product category</p>
         <select onChange={(e)=>setCategory(e.target.value)} className='w-full px-3 py-2'>
-          <option value="Men">Men</option>
-          <option value="Women">Women</option>
-          <option value="Kids">Kids</option>
+          <option value="Red">Red</option>
+          <option value="Yellow">Yellow</option>
+          <option value="Violet">Violet</option>
+          <option value="Orange">Orange</option>
+          <option value="Pink">Pink</option>
+          <option value="Blue">Blue</option>
+          <option value="Green">Green</option>
         </select>
       </div>
       <div>
-        <p className='mb-2'> Product category</p>
+        <p className='mb-2'> Product Subcategory</p>
         <select onChange={(e)=>setSubCategory(e.target.value)} className='w-full px-3 py-2'>
-          <option value="Men">Men</option>
-          <option value="Women">Women</option>
-          <option value="Kids">Kids</option>
+          <option value="Banarasi">Banarasi</option>
+          <option value="Regal">Regal</option>
+          <option value="Gorgette">Gorgette</option>
+          <option value="Chiffon">Chiffon</option>
+          <option value="Organza">Organza</option>
         </select>
       </div>
       </div>
