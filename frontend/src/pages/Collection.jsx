@@ -91,16 +91,28 @@ useEffect(()=>{
       
       {/* Category Filter */}
       <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '':'hidden'} sm:block`}>
-      <p className='mb-3 text-sm font-medium'>CATEGORIES</p>
+      <p className='mb-3 text-sm font-medium'>COLOURS</p>
       <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
         <p className='flex gap-2'>
-          <input className='w-3' type="checkbox" value={'Men'} onChange={toggleCategory}></input>Men
+          <input className='w-3' type="checkbox" value={'Red'} onChange={toggleCategory}></input>Red
         </p>
         <p className='flex gap-2'>
-          <input className='w-3' type="checkbox" value="Women" onChange={toggleCategory}></input>Women
+          <input className='w-3' type="checkbox" value={'Yellow'} onChange={toggleCategory}></input>Yellow
         </p>
         <p className='flex gap-2'>
-          <input className='w-3' type="checkbox" value={'Kids'} onChange={toggleCategory}></input>Kids
+          <input className='w-3' type="checkbox" value={'Violet'} onChange={toggleCategory}></input>Violet
+        </p>
+        <p className='flex gap-2'>
+          <input className='w-3' type="checkbox" value={'Orange'} onChange={toggleCategory}></input>Orange
+        </p>
+        <p className='flex gap-2'>
+          <input className='w-3' type="checkbox" value={'Pink'} onChange={toggleCategory}></input>Pink
+        </p>
+        <p className='flex gap-2'>
+          <input className='w-3' type="checkbox" value={'Blue'} onChange={toggleCategory}></input>Blue
+        </p>
+        <p className='flex gap-2'>
+          <input className='w-3' type="checkbox" value={'Green'} onChange={toggleCategory}></input>Green
         </p>
       </div>
       </div>
@@ -109,13 +121,19 @@ useEffect(()=>{
       <p className='mb-3 text-sm font-medium'>TYPE</p>
       <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
         <p className='flex gap-2'>
-          <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubCategory}></input>Topwear
+          <input className='w-3' type="checkbox" value={'Banarasi'} onChange={toggleSubCategory}></input>Banarasi
         </p>
         <p className='flex gap-2'>
-          <input className='w-3' type="checkbox" value="Bottomwear" onChange={toggleSubCategory}></input>Bottomwear
+          <input className='w-3' type="checkbox" value="Regal" onChange={toggleSubCategory}></input>Regal
         </p>
         <p className='flex gap-2'>
-          <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory}></input>Winterwear
+          <input className='w-3' type="checkbox" value={'Gorgette'} onChange={toggleSubCategory}></input>Gorgette
+        </p>
+        <p className='flex gap-2'>
+          <input className='w-3' type="checkbox" value={'Chiffon'} onChange={toggleSubCategory}></input>Chiffon
+        </p>
+        <p className='flex gap-2'>
+          <input className='w-3' type="checkbox" value={'Organza'} onChange={toggleSubCategory}></input>Organza
         </p>
       </div>
       </div>
