@@ -174,11 +174,7 @@ const CarouselComponent = () => {
           --spacing-lg: 1.5rem;    /* 24px */
           --spacing-xl: 2rem;      /* 32px */
         }
-        * {
-          margin: 0 auto;
-          padding: 0;
-       
-        }
+        
         
         .container {
   width: 100%;
@@ -289,6 +285,7 @@ const CarouselComponent = () => {
           bottom: 20px;
         }
         .button button {
+        background:rgba(171, 171, 171, 0.36);
           width: 40px;
           height: 35px;
           border-radius: 8px;
