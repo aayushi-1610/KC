@@ -42,7 +42,7 @@ const Navbar = () => {
           <p>COLLECTION</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-white hidden"></hr>
         </NavLink>
-        <NavLink to="/about" className="flex flex-col items-center gap-1">
+        <NavLink to="/reel" className="flex flex-col items-center gap-1">
           <p>INSPO</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-white hidden"></hr>
         </NavLink>
@@ -130,9 +130,9 @@ const Navbar = () => {
           <NavLink
             onClick={() => setVisible(false)}
             className="py-2 pl-6 border"
-            to="/about"
+            to="/reel"
           >
-            ABOUT
+            INSPO
           </NavLink>
           <NavLink
             onClick={() => setVisible(false)}

@@ -105,11 +105,6 @@ const Cart = () => {
                     {/* Cart Totals */}
                     <div className="flex justify-end my-10">
                         <div className="w-full sm:w-[400px] bg-gray-100 p-4 rounded-md">
-                            <p className="text-lg font-semibold">Cart Totals</p>
-                            <div className="flex justify-between mt-2">
-                                <p>Subtotal:</p>
-                                <p>{currency}{getCartAmount().toFixed(2)}</p>
-                            </div>
                             <hr className="my-2" />
                             <button
                                 onClick={() => navigate("/place-order")}

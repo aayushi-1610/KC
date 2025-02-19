@@ -2,6 +2,7 @@ import navbar_bg from "./navbar_bg.png";
 import footer_bg from "./footer_bg.png";
 import bg_image from "./bg_image.png";
 import header_image from "./header_image.png";
+import box from "./box.png";
 import p_img1 from "./p_img1.png";
 import p_img2_1 from "./p_img2_1.png";
 import p_img2_2 from "./p_img2_2.png";
@@ -100,6 +101,7 @@ export const assets = {
   bg_image,
   footer_bg,
   header_image,
+  box
 };
 
 export const products = [
