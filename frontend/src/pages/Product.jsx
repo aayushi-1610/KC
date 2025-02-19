@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import RelatedProducts from "../components/relatedProducts";
@@ -9,6 +9,9 @@ const Product = () => {
     const [productData, setProductData] = useState(null);
     const [image, setImage] = useState("");
     const [size, setSize] = useState("");
+    const [isZoomed, setIsZoomed] = useState(false);
+    const imageRef = useRef(null);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
         if (products.length > 0) {
@@ -19,6 +22,16 @@ const Product = () => {
             }
         }
     }, [productId, products]);
+
+    const handleMouseMove = (e) => {
+        if (!imageRef.current) return;
+
+        const { left, top, width, height } = imageRef.current.getBoundingClientRect();
+        const x = ((e.clientX - left) / width) * 100;
+        const y = ((e.clientY - top) / height) * 100;
+
+        setMousePosition({ x, y });
+    };
 
     const handleAddToCart = () => {
         if (!token) {
@@ -48,8 +61,29 @@ const Product = () => {
                             />
                         ))}
                     </div>
-                    <div className="w-full sm:w-[80%]">
-                        <img src={image} alt="Product" width="400" />
+                    <div 
+                        className="w-full sm:w-[80%] relative overflow-hidden"
+                        onMouseEnter={() => setIsZoomed(true)}
+                        onMouseLeave={() => setIsZoomed(false)}
+                        onMouseMove={handleMouseMove}
+                    >
+                        <img 
+                            ref={imageRef}
+                            src={image} 
+                            alt="Product" 
+                            className="w-full h-auto"
+                        />
+                        {isZoomed && (
+                            <div 
+                                className="absolute inset-0 pointer-events-none"
+                                style={{
+                                    backgroundImage: `url(${image})`,
+                                    backgroundPosition: `${mousePosition.x}% ${mousePosition.y}%`,
+                                    backgroundSize: '200%',
+                                    backgroundRepeat: 'no-repeat'
+                                }}
+                            />
+                        )}
                     </div>
                 </div>
 
@@ -71,7 +105,12 @@ const Product = () => {
                         </div>
                     </div>
 
-                    <button onClick={handleAddToCart} className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700">ADD TO CART</button>
+                    <button 
+                        onClick={handleAddToCart} 
+                        className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700"
+                    >
+                        ADD TO CART
+                    </button>
 
                     <hr className="mt-8 sm:w-4/5" />
                 </div>
@@ -81,4 +120,5 @@ const Product = () => {
         </div>
     );
 };
+
 export default Product;
