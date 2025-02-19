@@ -61,12 +61,11 @@ const Reel = () => {
     };
 
     const videoData = [
-        { src: "video1.mp4" },
-        { src: "v2.mp4" },
-        { src: "v3.mp4" },
-        { src: "v4.mp4" },
-        { src: "v5.mp4" },
-        { src: "v6.mp4" },
+        { src: "../assets/video1.mp4" },
+        { src: "../assets/v2.mp4" },
+        { src: "../assets/v3.mp4" },
+        { src: "../assets/v4.mp4" },
+        { src: "../assets/v5.mp4" },
     ];
 
     return (
