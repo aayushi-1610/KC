@@ -5,17 +5,24 @@ import { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const { setShowSearch, getCartCount, navigate, token, setToken, setCartItems } = useContext(ShopContext);
+  const {
+    setShowSearch,
+    getCartCount,
+    navigate,
+    token,
+    setToken,
+    setCartItems,
+  } = useContext(ShopContext);
 
   const logout = () => {
     // Clear the token from localStorage
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     // Clear the token from context
-    setToken('');
+    setToken("");
     // Clear the cart items from context
     setCartItems({});
     // Redirect to the login page
-    navigate('/');
+    navigate("/");
   };
 
   return (
@@ -36,7 +43,7 @@ const Navbar = () => {
           <hr className="w-2/4 border-none h-[1.5px] bg-white hidden"></hr>
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
-          <p>ABOUT</p>
+          <p>INSPO</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-white hidden"></hr>
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
@@ -53,7 +60,7 @@ const Navbar = () => {
         ></img>
         <div className="group relative">
           <img
-            onClick={() => (token ? null : navigate('/login'))}
+            onClick={() => (token ? null : navigate("/login"))}
             className="w-12 cursor-pointer"
             src={assets.profile_icon}
             alt=""
@@ -67,7 +74,9 @@ const Navbar = () => {
                 <Link to="/orders">
                   <p className="cursor-pointer hover:text-black">Orders</p>
                 </Link>
-                <p onClick={logout} className="cursor-pointer hover:text-black">Logout</p>
+                <p onClick={logout} className="cursor-pointer hover:text-black">
+                  Logout
+                </p>
               </div>
             </div>
           )}
