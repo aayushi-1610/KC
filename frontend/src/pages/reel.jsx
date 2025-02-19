@@ -1,4 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
+import video1 from "../assets/video1.mp4";
+import v2 from "../assets/v2.mp4";
+import v3 from "../assets/v3.mp4";
+import v4 from "../assets/v4.mp4";
+import v5 from "../assets/v5.mp4";
+
 
 const Reel = () => {
     const videoRefs = useRef([]);
@@ -59,14 +65,14 @@ const Reel = () => {
             event.target.value = "";
         }
     };
-
     const videoData = [
-        { src: "../assets/video1.mp4" },
-        { src: "../assets/v2.mp4" },
-        { src: "../assets/v3.mp4" },
-        { src: "../assets/v4.mp4" },
-        { src: "../assets/v5.mp4" },
-    ];
+        { src: video1 },  
+        { src: v2 },      
+        { src: v3 },      
+        { src: v4 },      
+        { src: v5 },      
+        ];
+    
 
     return (
         <div className="reel-container">
@@ -76,7 +82,6 @@ const Reel = () => {
                         className="reel"
                         src={video.src}
                         playsInline
-                        muted
                         ref={(el) => (videoRefs.current[index] = el)}
                     ></video>
                     <div className="controls">
@@ -125,9 +130,11 @@ const Reel = () => {
                     flex-direction: column;
                     align-items: center;
                     margin-bottom: 20px;
+                    
                 }
                 .reel {
-                    width: 300px;
+                margin-top:1rem;
+                    width: 100%;
                     height: 500px;
                     border-radius: 10px;
                     background: black;
