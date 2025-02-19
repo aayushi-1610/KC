@@ -31,7 +31,14 @@ const CarouselComponent = () => {
 
   return (
     <>
-      <div className="carousel-container">
+      <div
+        className="carousel-container"
+        style={{
+          marginLeft: "calc(-50vw + 50%)",
+          marginRight: "calc(-50vw + 50%)",
+          width: "100vw",
+        }}
+      >
         <div className="carousel-slide">
           <div
             className="carousel-item"
@@ -155,16 +162,16 @@ const CarouselComponent = () => {
 
       <style>{`
         .carousel-container {
-          width: 124.3%;
-          max-width: 110rem;
+          width: 100%;
           height: 90vh;
-          margin-left: -10rem;
           margin-top: 0.9rem;
           margin-bottom: 3rem;
           background: transparent;
           box-shadow: 0 30px 50px #dbdbdb;
           position: relative;
+          overflow: hidden;
         }
+        
         .carousel-slide {
           position: relative;
           height: 100%;
@@ -172,6 +179,7 @@ const CarouselComponent = () => {
           display: flex;
           align-items: center;
         }
+        
         .carousel-item {
           width: 18%;
           height: 65%;
@@ -184,6 +192,7 @@ const CarouselComponent = () => {
           background-size: cover;
           transition: 0.7s;
         }
+        
         .carousel-item:nth-child(1),
         .carousel-item:nth-child(2) {
           top: 0;
@@ -193,6 +202,7 @@ const CarouselComponent = () => {
           width: 100%;
           height: 100%;
         }
+        
         .carousel-item:nth-child(2)::before {
           content: "";
           position: absolute;
@@ -203,43 +213,53 @@ const CarouselComponent = () => {
           background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
           border-radius: inherit;
         }
+        
         .carousel-item:nth-child(3) {
           left: 50%;
         }
+        
         .carousel-item:nth-child(4) {
           left: calc(50% + 220px);
         }
+        
         .carousel-item:nth-child(n+5) {
           left: calc(50% + 440px);
-          
         }
+        
         .carousel-content {
           position: absolute;
           top: 50%;
-          left: 100px;
-          width: 300px;
+          left: 5%;
+          width: 90%;
+          max-width: 300px;
           text-align: left;
           color: #eee;
           transform: translate(0, -50%);
           font-family: system-ui;
           display: none;
+          padding: 0 15px;
         }
+        
         .carousel-item:nth-child(2) .carousel-content {
           display: block;
         }
+        
         .carousel-name {
-          font-size: 40px;
+          font-size: clamp(24px, 5vw, 40px);
           text-transform: uppercase;
           font-weight: bold;
           opacity: 0;
           animation: animate 1s ease-in-out 1 forwards;
         }
+        
         .carousel-des {
           margin-top: 10px;
           margin-bottom: 20px;
+          font-size: clamp(14px, 2vw, 16px);
           opacity: 0;
           animation: animate 1s ease-in-out 0.3s 1 forwards;
         }
+        
         .carousel-content button {
           padding: 10px 20px;
           border: none;
@@ -247,6 +267,7 @@ const CarouselComponent = () => {
           opacity: 0;
           animation: animate 1s ease-in-out 0.6s 1 forwards;
         }
+        
         @keyframes animate {
           from {
             opacity: 0;
@@ -259,12 +280,14 @@ const CarouselComponent = () => {
             filter: blur(0);
           }
         }
+        
         .carousel-button {
           width: 100%;
           text-align: center;
           position: absolute;
           bottom: 20px;
         }
+        
         .carousel-button button {
           background: rgba(171, 171, 171, 0.45);
           width: 40px;
@@ -275,9 +298,66 @@ const CarouselComponent = () => {
           margin: 0 5px;
           transition: 0.3s;
         }
+        
         .carousel-button button:hover {
           background: #ababab;
           color: #fff;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+          .carousel-item:nth-child(3) {
+            left: 52%;
+          }
+          
+          .carousel-item:nth-child(4) {
+            left: calc(52% + 180px);
+          }
+          
+          .carousel-item:nth-child(n+5) {
+            left: calc(52% + 360px);
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .carousel-container {
+            height: 80vh;
+          }
+          
+          .carousel-content {
+            left: 20px;
+            width: calc(100% - 40px);
+          }
+          
+          .carousel-item:nth-child(3),
+          .carousel-item:nth-child(4),
+          .carousel-item:nth-child(n+5) {
+            display: none;
+          }
+          
+          .carousel-item:nth-child(2)::before {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.4));
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .carousel-container {
+            height: 70vh;
+          }
+          
+          .carousel-content {
+            left: 15px;
+            width: calc(100% - 30px);
+          }
+          
+          .carousel-button {
+            bottom: 10px;
+          }
+          
+          .carousel-button button {
+            width: 35px;
+            height: 30px;
+          }
         }
       `}</style>
     </>

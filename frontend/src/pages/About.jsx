@@ -7,23 +7,25 @@ const About = () => {
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        
         .about-wrapper {
           display: flex;
+          flex-wrap: wrap;
           justify-content: center;
           gap: 20px;
-          margin: 0 90px;
+          margin: 0 auto;
+          max-width: 1200px;
+          padding: 0 20px;
         }
-        @media (max-width: 1200px) {
-          .about-wrapper {
-            flex-direction: column;
-            align-items: center;
-          }
-        }
+        
         .about-box {
-          width: 350px;
+          width: 100%;
+          max-width: 350px;
           position: relative;
           perspective: 1000px;
+          margin-bottom: 30px;
         }
+        
         .about-box .about-front-face {
           background: #fff;
           height: 220px;
@@ -34,20 +36,29 @@ const About = () => {
           justify-content: center;
           box-shadow: 0px 5px 20px 0px rgba(128, 0, 0, 0.1);
           transition: all 0.5s ease;
+          padding: 20px;
         }
+        
         .about-box .about-front-face .about-icon {
           height: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
+        
         .about-box .about-front-face .about-icon img {
-          font-size: 65px;
-          color: #800000; /* Maroon */
+          max-width: 100%;
+          max-height: 100%;
         }
+        
         .about-box .about-front-face span {
-          font-size: 22px;
+          font-size: 20px;
           font-weight: 600;
           text-transform: uppercase;
-          color: #800000; /* Maroon */
+          color: #800000;
+          text-align: center;
         }
+        
         .about-box .about-back-face {
           position: absolute;
           top: 0;
@@ -55,7 +66,7 @@ const About = () => {
           z-index: 1;
           height: 220px;
           width: 100%;
-          padding: 30px;
+          padding: 20px;
           color: #fff;
           opacity: 0;
           transform-style: preserve-3d;
@@ -64,27 +75,75 @@ const About = () => {
           box-shadow: 0px 5px 20px 0px rgba(128, 0, 0, 0.1);
           transform: translateY(110px) rotateX(-90deg);
           transition: all 0.9s ease;
+          overflow-y: auto;
         }
+        
         .about-box .about-back-face p {
           margin-top: 10px;
-          text-align: justify;
+          text-align: center;
         }
+        
         .about-box:hover .about-back-face {
           opacity: 1;
           transform: rotateX(0deg);
         }
+        
         .about-box:hover .about-front-face {
           opacity: 0;
           transform: translateY(-110px) rotateX(90deg);
         }
+        
+        .header-image {
+          max-width: 100%;
+          height: auto;
+          margin: 0 auto;
+          display: block;
+        }
+        
+        @media (max-width: 768px) {
+          .about-wrapper {
+            padding: 0 10px;
+          }
+          
+          .about-box {
+            margin-bottom: 20px;
+          }
+          
+          .about-box .about-front-face span {
+            font-size: 18px;
+          }
+          
+          .about-box .about-back-face {
+            padding: 15px;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .about-box .about-front-face {
+            height: 200px;
+          }
+          
+          .about-box .about-back-face {
+            height: 200px;
+          }
+          
+          .about-box .about-front-face .about-icon {
+            height: 60px;
+          }
+        }
       `}</style>
 
-      <div className="text-center text-3xl mt-20">
+      <div className="text-center text-3xl mt-10 md:mt-20 px-4">
         <Title text1={"ABOUT"} text2={"US"}></Title>
-        <div className="my-10">
-          <img src={assets.header_image} alt="" />
+        <div className="my-5 md:my-10">
+          <img
+            src={assets.header_image}
+            alt="Header"
+            className="header-image"
+          />
         </div>
       </div>
+
       <div className="about-wrapper">
         {/* Box 1 */}
         <div className="about-box">
@@ -92,7 +151,6 @@ const About = () => {
             <div className="about-icon">
               <img
                 src="https://img.icons8.com/color/96/000000/crown.png"
-                width="80rem"
                 alt="Crown Icon"
               />
             </div>
@@ -114,7 +172,6 @@ const About = () => {
               <img
                 src="https://img.icons8.com/?size=100&id=1328&format=png&color=000000"
                 alt="Thread Icon"
-                width="60rem"
               />
             </div>
             <span>From Thread to Treasure</span>
@@ -131,11 +188,10 @@ const About = () => {
         {/* Box 3 */}
         <div className="about-box">
           <div className="about-front-face">
-            <div className="about-icon mb-5">
+            <div className="about-icon">
               <img
                 src="https://img.icons8.com/color/96/000000/ok--v1.png"
                 alt="Quality Icon"
-                height="30rem"
               />
             </div>
             <span>Quality You Can Trust</span>

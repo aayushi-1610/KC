@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Login = () => {
-  const [currentState, setCurrentState] = useState('Login ');
+  const [currentState, setCurrentState] = useState('Login');
   const { setToken, backendUrl, token } = useContext(ShopContext);
   const navigate = useNavigate(); // Initialize useNavigate
 

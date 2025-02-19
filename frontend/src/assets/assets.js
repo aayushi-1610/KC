@@ -17,8 +17,8 @@ import p_img8 from "./p_img8.png";
 import p_img9 from "./p_img9.png";
 import p_img10 from "./p_img10.png";
 import p_img11 from "./p_img11.png";
-
-
+import camera_icon from "./camera_icon.png";
+import menu_icon from "./menu_icon.png"
 
 import logo from "./logo.png";
 import hero_img from "./hero_img.png";
@@ -32,7 +32,6 @@ import search_icon from "./search_icon.png";
 import star_dull_icon from "./star_dull_icon.png";
 import star_icon from "./star_icon.png";
 import support_img from "./support_img.png";
-import menu_icon from "./menu_icon.png";
 import about_img from "./about_img.png";
 import contact_img from "./contact_img.png";
 import razorpay_logo from "./razorpay_logo.png";
@@ -62,7 +61,8 @@ export const assets = {
   bg_image,
   footer_bg,
   header_image,
-  box
+  box,
+  camera_icon,
 };
 
 export const products = [
