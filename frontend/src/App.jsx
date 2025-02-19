@@ -7,6 +7,7 @@ import SearchBar from "./components/SearchBar";
 import Collection from "./pages/Collection";
 import Contact from "./pages/Contact";
 import Product from "./pages/Product";
+import Reel from "./pages/reel";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Orders from "./pages/Orders";
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/product/:productId" element={<Product></Product>}></Route>
         <Route path="/cart" element={<Cart></Cart>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/reel" element={<Reel />} />
         <Route path="/place-order" element={<PlaceOrder></PlaceOrder>}></Route>
         <Route path="/orders" element={<Orders></Orders>}></Route>
       </Routes>
