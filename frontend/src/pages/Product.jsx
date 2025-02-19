@@ -5,7 +5,7 @@ import RelatedProducts from "../components/relatedProducts";
 
 const Product = () => {
     const { productId } = useParams();
-    const { products, currency } = useContext(ShopContext);
+    const { products, addToCart, token, navigate } = useContext(ShopContext);
     const [productData, setProductData] = useState(null);
     const [image, setImage] = useState("");
     const [size, setSize] = useState("");
@@ -19,6 +19,15 @@ const Product = () => {
             }
         }
     }, [productId, products]);
+
+    const handleAddToCart = () => {
+        if (!token) {
+            toast.error("Please login to add items to the cart");
+            navigate('/login');
+            return;
+        }
+        addToCart(productData._id);
+    };
 
     if (!productData) {
         return <p>Loading product...</p>;
@@ -62,7 +71,7 @@ const Product = () => {
                         </div>
                     </div>
 
-                    <button className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700">ADD TO CART</button>
+                    <button onClick={handleAddToCart} className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700">ADD TO CART</button>
 
                     <hr className="mt-8 sm:w-4/5" />
                 </div>
@@ -72,5 +81,4 @@ const Product = () => {
         </div>
     );
 };
-
 export default Product;
