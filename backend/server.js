@@ -22,7 +22,7 @@ connectDB();
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-  origin: "https://kc-frontend.vercel.app", // Allow only your frontend
+  origin: ["https://kc-frontend.vercel.app","https://kc-admin-one.vercel.app"], // Allow only your frontend
   credentials: true // optional if you're using cookies/auth
 }));
 app.use("/uploads", express.static("uploads")); // Optional if using file uploads
