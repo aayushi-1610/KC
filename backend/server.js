@@ -1,40 +1,46 @@
-import express from "express"
-import bodyParser from 'body-parser'
-import cors from "cors"
-import mongoose from "./config/mongodb.js";
+// index.js or server.js
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import dotenv from "dotenv";
+
+import connectDB from "./config/mongodb.js";
 import connectCloudinary from "./config/cloudinary.js";
 import userRouter from "./routes/userRoute.js";
-import dotenv from "dotenv";
 import productRouter from "./routes/productRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
-import connectDB from './config/mongodb.js'; // Use `.js` extension for ESM
 
 dotenv.config();
 
-const app =express()
+const app = express();
+const port = process.env.PORT || 5000;
 
+// Connect to DB
 connectDB();
 
-app.use(bodyParser.json())
-app.use(cors())
-const port = process.env.PORT || 5000
-app.use("/uploads", express.static("uploads")); // If using file uploads
+// Middleware
+app.use(bodyParser.json());
+app.use(cors({
+  origin: "https://kc-frontend.vercel.app", // Allow only your frontend
+  credentials: true // optional if you're using cookies/auth
+}));
+app.use("/uploads", express.static("uploads")); // Optional if using file uploads
 
+// Connect Cloudinary
 connectCloudinary();
 
-//api endpoints
-app.use('/api/user',userRouter)
-app.use('/api/product',productRouter);
-app.use('/api/cart',cartRouter)
-app.use('/api/order',orderRouter);
+// Routes
+app.use("/api/user", userRouter);
+app.use("/api/product", productRouter);
+app.use("/api/cart", cartRouter);
+app.use("/api/order", orderRouter);
 
+app.get("/", (req, res) => {
+  res.send("Hello world from Server");
+});
 
-app.get('/',(req,res)=>{
-    res.send("Hello world from Server")
-})
-
-app.listen(port,()=>{
-    console.log(`Server is running on : http://localhost:${port}`)
-})
-
+// Start server
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
