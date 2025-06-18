@@ -8,9 +8,14 @@ import dotenv from "dotenv";
 import productRouter from "./routes/productRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
+import connectDB from './config/mongodb.js'; // Use `.js` extension for ESM
+
 dotenv.config();
 
 const app =express()
+
+connectDB();
+
 app.use(bodyParser.json())
 app.use(cors())
 const port = process.env.PORT || 5000

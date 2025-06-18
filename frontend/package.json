@@ -20,7 +20,7 @@
     "react-dom": "^19.0.0",
     "react-medium-image-zoom": "^5.2.13",
     "react-router-dom": "^7.1.5",
-    "react-toastify": "^11.0.3",
+    "react-toastify": "^11.0.5",
     "tailwind": "^4.0.0"
   },
   "devDependencies": {
